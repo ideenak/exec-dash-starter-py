@@ -115,8 +115,8 @@ print(" ")
 print("VISUALIZING THE DATA...")
 
 fig, bgraph = mplp.subplots()
-fig.set_figheight(6)
-fig.set_figwidth(18)
+fig.set_figheight(10)
+fig.set_figwidth(25)
 
 for uno, dos in enumerate(graphlist):
     bgraph.text(dos, uno, " ${0:,.2f}".format(dos))
@@ -124,3 +124,12 @@ for uno, dos in enumerate(graphlist):
 datapull = price.index.tolist()
 dashes = ty.StrMethodFormatter("{x:,.2f}")
 bgraph.xaxis.set_major_formatter(dashes)
+
+
+bgraph.barh(datapull,graphlist)
+
+bgraph.set_xlabel("Sales ($)")
+bgraph.set_ylabel("Product")
+
+bgraph.set_title(month + " " + yentry + " - Total Sales by Product") 
+
