@@ -22,3 +22,19 @@ while True:
     yentry = input("Using the format YYYY, please enter the year for your sales data of choice:      ")
 
     fname = "sales-" + yentry + monthalpha + ".csv"
+
+    if not os.path.isfile("data/" + fname):
+        print("Error: data does not exist for the month and year you entered. The file could not be found. Please restart.")
+        #error message that appears if the file does not exist
+    else:
+        break
+
+month = mreturn(monthalpha)
+
+
+#This part of the code reads the csv and then distinguishes between the products, creating a list for each one
+#Follows up by creating a sales prices for each, creates total prices at the end by summing them up
+csvreader = pd.read_csv("data/" + fname)
+productlist = []
+numprods = 0
+numprods2 = 0
