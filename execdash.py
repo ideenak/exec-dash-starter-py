@@ -110,3 +110,17 @@ while numprodssec < numprods:
 print("----------------------------------------")
 
 print(" ")
+
+#graph creation pulls data from list earlier named "graphlist" to create the visualized data
+print("VISUALIZING THE DATA...")
+
+fig, bgraph = mplp.subplots()
+fig.set_figheight(6)
+fig.set_figwidth(18)
+
+for uno, dos in enumerate(graphlist):
+    bgraph.text(dos, uno, " ${0:,.2f}".format(dos))
+
+datapull = price.index.tolist()
+dashes = ty.StrMethodFormatter("{x:,.2f}")
+bgraph.xaxis.set_major_formatter(dashes)
