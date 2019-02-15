@@ -123,6 +123,7 @@ for uno, dos in enumerate(graphlist):
 datapull = price.index.tolist()
 dashes = ty.StrMethodFormatter("{x:,.2f}")
 bgraph.xaxis.set_major_formatter(dashes)
+#Shoutout @chenmi1997 for help with the formatting here
 
 
 bgraph.barh(datapull,graphlist)
