@@ -1,4 +1,5 @@
 import operator
+import matplotlib.ticker as ty
 import matplotlib.pyplot as mplp
 import pandas as pd 
 import os
@@ -36,6 +37,8 @@ month = mreturn(monthalpha)
 #Follows up by creating a sales prices for each, creates total prices at the end by summing them up
 csvreader = pd.read_csv("data/" + fname)
 productlist = []
+
+#the following variables are variables used for counting later on
 numprods = 0
 numprodssec = 0
 
@@ -52,7 +55,23 @@ price = price.sort_values(by=['sales price'], ascending = False)
 totalprice = price['sales price'].sum()
 #totalprice = price.sort_values(by=[totalprice], ascending = False)
 
-#allows for the determination of top selling products, will be used later
+#GRAPH RELATED MATERIALS
+
+graphlist = []
+#allows for entries of prices
+
+
+salep = 0
+while salep < numprods:
+    graphlist.append(price.iloc[salep][2])
+    salep = salep + 1
+
+
+
+
+
+
+
 
 print(" ")
 
@@ -77,6 +96,17 @@ print(" ")
 print("----------------------------------------")
 print("TOP SELLING PRODUCTS")
 
-#figure out how to find rankings of prices (iloc?)
-#figure out if sales prices need to still be sorted
-#find out how to align prices after
+
+#outputs highest selling products, their ranking, and how much sales were
+while numprodssec < numprods:
+    countvar = str(numprodssec + 1) 
+    totsales = str("{0:,.2f}".format(price.iloc[numprodssec][2])).rjust(9)
+    prodname = str(price.index[numprodssec]).ljust(20)
+   
+    hsellinglist = countvar + " - " + prodname + "    $" + totsales
+    print(hsellinglist)
+    numprodssec = numprodssec + 1
+
+print("----------------------------------------")
+
+print(" ")
