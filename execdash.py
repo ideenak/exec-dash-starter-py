@@ -133,3 +133,9 @@ bgraph.set_ylabel("Product")
 
 bgraph.set_title(month + " " + yentry + " - Total Sales by Product") 
 
+print(" ")
+print("----------------------------------------")
+print(" ")
+print("Thank you for using the Executive Dashboard!")
+
+mplp.show()
