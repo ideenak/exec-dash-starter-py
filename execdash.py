@@ -69,10 +69,6 @@ while salep < numprods:
 
 
 
-
-
-
-
 print(" ")
 
 print("----------------------------------------")
@@ -105,6 +101,7 @@ while numprodssec < numprods:
    
     hsellinglist = countvar + " - " + prodname + "    $" + totsales
     print(hsellinglist)
+    #allows program to continue in a loop ]
     numprodssec = numprodssec + 1
 
 print("----------------------------------------")
@@ -115,11 +112,13 @@ print(" ")
 print("VISUALIZING THE DATA...")
 
 fig, bgraph = mplp.subplots()
-fig.set_figheight(10)
-fig.set_figwidth(25)
+fig.set_figheight(5)
+fig.set_figwidth(15)
+#formatting of graph dimensions
 
 for uno, dos in enumerate(graphlist):
-    bgraph.text(dos, uno, " ${0:,.2f}".format(dos))
+    bgraph.text(dos, uno, " ${0:,.2f}".format(dos)).set_fontsize(7)
+#shoutout to an assortment of stack overflow pages, a conversation with a CS TA, and a phone call with my friend who majors in CS
 
 datapull = price.index.tolist()
 dashes = ty.StrMethodFormatter("{x:,.2f}")
@@ -127,11 +126,18 @@ bgraph.xaxis.set_major_formatter(dashes)
 
 
 bgraph.barh(datapull,graphlist)
+#pulls the data into the bar graph
 
+
+#setting labels for the chart
 bgraph.set_xlabel("Sales ($)")
 bgraph.set_ylabel("Product")
 
-bgraph.set_title(month + " " + yentry + " - Total Sales by Product") 
+bgraph.set_title(month + " " + yentry + " - Highest Selling Products ") 
+
+mplp.tight_layout()
+#shoutout to https://georgetown-opim-py.slack.com/archives/CFZDKNKA4/p1549983772015200
+
 
 print(" ")
 print("----------------------------------------")
@@ -139,3 +145,4 @@ print(" ")
 print("Thank you for using the Executive Dashboard!")
 
 mplp.show()
+
