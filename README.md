@@ -1,68 +1,40 @@
-# exec-dash-starter-py
+# Executive Dashboard Project
 
-A starter repository for the "Executive Dashboard" project.
+Submission for ["Executive Dashboard" project](https://github.com/prof-rossetti/georgetown-opim-243-201901/blob/master/projects/exec-dash.md).
 
 ## Prerequisites
 
-  + Anaconda 3.7
-  + Python 3.7
-  + Pip
+-pip
 
 ## Installation
 
-Fork this [starter project repository](https://github.com/prof-rossetti/exec-dash-starter-py) under your own control, then clone or download the resulting repository onto your computer. Then navigate there from the command line:
+This project requires Python 3.x.
 
-```sh
-cd exec-dash-starter-py
-```
+Download or clone the repository, then enter the following commands in command line:
 
-Use Anaconda to create and activate a new virtual environment, perhaps called "dashboard-env". From inside the virtual environment, install package dependencies:
 
-```sh
-pip install pandas plotly
+```shell
+pip install pandas
+pip install matplotlib
+pip install -r requirements.txt
 ```
 
 ## Usage
 
-Process monthly sales data to generate a report of business insights:
+In order to run this program, enter the following:
 
-```sh
-python monthly_sales.py
-
-# see also this alternative approach:
-python monthly_sales_alt.py
+```shell
+python exec_dash.py
 ```
 
-Sample information outputs:
+Then, follow the instructions.
 
-```py
-#> -----------------------
-#> MONTH: March 2018
-#> -----------------------
-#> CRUNCHING THE DATA...
-#> -----------------------
-#> TOTAL MONTHLY SALES: $12,000.71
-#> -----------------------
-#> TOP SELLING PRODUCTS:
-#>   1) Button-Down Shirt: $6,960.35
-#>   2) Super Soft Hoodie: $1,875.00
-#>   3) Khaki Pants: $1,602.00
-#>   4) Vintage Logo Tee: $941.05
-#>   5) Brown Boots: $250.00
-#>   6) Sticker Pack: $216.00
-#>   7) Baseball Cap: $156.31
-#> -----------------------
-#> VISUALIZING THE DATA...
-#> -----------------------
-#> SAVED REPORT TO: reports/top-sellers-201803.html
+
+## Component Testing
+
+If you wish to run a test, enter the following:
+
+
+```shell
+pytest
 ```
-
-Example chart:
-
-![example bar chart of top-selling products](/images/top-sellers-201803.png)
-
-Alternative chart:
-
-![example bar chart of top-selling products](/images/top-sellers-201803-alt.png)
-
-## [License](/LICENSE.md)
